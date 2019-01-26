@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Meteorite : MonoBehaviour
 {
+    public Sprite[] PossibleSprites;
+
     [Tooltip("The object to aim for when pulsing.")]
     public GameObject pulseTowardTarget;
     private Rigidbody2D rigidBody;
@@ -31,6 +33,8 @@ public class Meteorite : MonoBehaviour
         }
         rigidBody = GetComponent<Rigidbody2D>();
         pulsesPerSecond = pulsesPerSecond/2;
+
+        GetComponent<SpriteRenderer>().sprite = PossibleSprites[Random.Range(0, PossibleSprites.Length - 1)];
     }
 
     // Update is called once per frame
