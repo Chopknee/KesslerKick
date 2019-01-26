@@ -24,8 +24,24 @@ MonoBehaviour:
   - {fileID: 114926976747056212}
   StringsBanks:
   - {fileID: 114756073436157048}
-  stringsBankWriteTime: 636841196247744384
+  stringsBankWriteTime: 636841230468900627
   cacheVersion: 3
+--- !u!114 &114080466493929588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Power
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114106706905051040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +62,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114344871695073938}
+  - {fileID: 114080466493929588}
   MinDistance: 1
   MaxDistance: 20
   Length: 2200
@@ -79,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841196248260200
+  lastModified: 636841230469594640
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -100,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841209294362460
+  lastModified: 636841230470844545
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -121,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\AudioBanks\Desktop\Master Bank.strings.bank
-  lastModified: 636841196247744384
+  lastModified: 636841230468900627
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -165,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841196247575724
+  lastModified: 636841230468850632
   LoadResult: 0
   FileSizes:
   - Name: Desktop
