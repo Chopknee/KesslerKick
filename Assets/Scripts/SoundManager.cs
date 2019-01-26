@@ -44,6 +44,7 @@ public class SoundManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         shuttingDown = true;
+        musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnDestroy()

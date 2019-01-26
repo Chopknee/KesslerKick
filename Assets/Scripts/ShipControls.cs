@@ -31,12 +31,15 @@ public class ShipControls : MonoBehaviour
     public delegate void GetKnockout();
     public event GetKnockout OnGetKnockout;
 
+    private ParticleSystem thruster;
+
     // Start is called before the first frame update
     void Start()
     {
         lastPosition = transform.position;
         velocity = Vector2.zero;
         GetComponentInChildren<ForceFieldTrigger>().OnTriggered += OnTriggerEnter2D;
+        thruster = GetComponentInChildren<ParticleSystem>(); 
     }
 
     // Update is called once per frame
@@ -46,10 +49,19 @@ public class ShipControls : MonoBehaviour
 
         if (Input.GetAxis(accelerationAxis) < 0) {
             orbt = accelerationSpeed;
+            SoundManager.Instance.StartThruster(gameObject);
+            if (thruster.isStopped)
+                thruster.Play();
         } else if (Input.GetAxis(accelerationAxis) > 0) {
             orbt = -accelerationSpeed;
+            SoundManager.Instance.StartThruster(gameObject);
+            if (thruster.isStopped)
+                thruster.Play();
         } else {
             orbt = -currentSpeed * slowdownPercent;
+            SoundManager.Instance.StopThruster(gameObject);
+            if (thruster.isPlaying)
+                thruster.Stop();
         }
 
 
