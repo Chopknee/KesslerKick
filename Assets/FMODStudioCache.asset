@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 114381112875677746}
   StringsBanks:
   - {fileID: 114038133370739918}
-  stringsBankWriteTime: 636841177824479746
+  stringsBankWriteTime: 636841196247744384
   cacheVersion: 3
 --- !u!114 &114038133370739918
 MonoBehaviour:
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\AudioBanks\Desktop\Master Bank.strings.bank
-  lastModified: 636841177824479746
+  lastModified: 636841196247744384
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841177824435112
+  lastModified: 636841196247575724
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -97,13 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841177826766290
+  lastModified: 636841196248855404
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3430080
+    Value: 3430112
   - Name: HTML5
-    Value: 3430080
+    Value: 3430112
   Exists: 1
 --- !u!114 &114552945317922240
 MonoBehaviour:
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841177826012373
+  lastModified: 636841196248260200
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -126,6 +126,22 @@ MonoBehaviour:
   - Name: HTML5
     Value: 27776
   Exists: 1
+--- !u!114 &114560486781817344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Power
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114761688693988956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +162,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114761995648059966}
+  - {fileID: 114560486781817344}
   MinDistance: 1
   MaxDistance: 20
   Length: 2200

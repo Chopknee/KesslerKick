@@ -44,11 +44,13 @@ public class SoundManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         shuttingDown = true;
-        musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnDestroy()
     {
+        if (musicInstance.isValid())
+            musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
         shuttingDown = true;
     }
 
@@ -251,6 +253,9 @@ public class SoundManager : MonoBehaviour
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
     static FMOD.RESULT BeatEventCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, FMOD.Studio.EventInstance instance, IntPtr parameterPtr)
     {
+        if (SoundManager.shuttingDown)
+            return FMOD.RESULT.OK;
+
         // Retrieve the user data
         switch (type)
         {

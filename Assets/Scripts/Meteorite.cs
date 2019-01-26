@@ -26,6 +26,8 @@ public class Meteorite : MonoBehaviour
     public delegate void Destroyed();
     public event Destroyed OnDestroyed;
 
+    private int pulseBeat;
+
     void Start()
     {
         if (pulseTowardTarget == null) {
@@ -34,21 +36,19 @@ public class Meteorite : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         pulsesPerSecond = pulsesPerSecond/2;
 
-        GetComponent<SpriteRenderer>().sprite = PossibleSprites[Random.Range(0, PossibleSprites.Length - 1)];
+        GetComponent<SpriteRenderer>().sprite = PossibleSprites[Random.Range(0, PossibleSprites.Length)];
+
+        SoundManager.Instance.AddBeatCallback(OnBeat);
+
+        pulseBeat = Random.Range(1, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!floatMode) {
-            Vector3 targetDirection = pulseTowardTarget.transform.position - transform.position;
-            targetDirection.Normalize();
-            //Now the "pulsing" mechanic.
             pulse += pulsesPerSecond * Time.deltaTime;
-            if (pulse >= 1) {
-                pulse = 0;
-            }
-            rigidBody.velocity = targetDirection * pulseMultiplier * pulseCurve.Evaluate(pulse);
+            Pulse();
         }
     }
 
@@ -66,5 +66,23 @@ public class Meteorite : MonoBehaviour
 
     public void Kill() {
         Destroy(gameObject);
+    }
+
+    private void Pulse()
+    {
+        if (!floatMode)
+        {
+            Vector3 targetDirection = pulseTowardTarget.transform.position - transform.position;
+            targetDirection.Normalize();
+            //Now the "pulsing" mechanic.
+           rigidBody.velocity = targetDirection * pulseMultiplier * pulseCurve.Evaluate(pulse);
+
+        }
+    }
+
+    private void OnBeat(int bar, int beat)
+    {
+        if (beat == pulseBeat || ((bar + 3) % 4 == 0 && beat == 1))
+            pulse = 0;
     }
 }

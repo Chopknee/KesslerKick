@@ -13,7 +13,8 @@ public class InfiniteMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager.Instance.StartMusic();
+        SoundManager.Instance.AddBeatCallback(OnBeat);
     }
 
     // Update is called once per frame
@@ -21,13 +22,30 @@ public class InfiniteMode : MonoBehaviour
     {
         t += Time.deltaTime;
         if (t >= spawnTime) {
-            GameObject go = Instantiate(targetObject);
-            float pos = Random.Range(0f, 1f) * 2 * Mathf.PI;
-            go.transform.position = ((Vector2)targetObject.transform.position) * new Vector2(Mathf.Cos(pos), Mathf.Sin(pos));
             //go.transform.position = new Vector2(
             //    (targetObject.transform.position.x + spawnRadius) * Mathf.Cos(pos * 2 * Mathf.PI),
             //    (targetObject.transform.position.y + spawnRadius) * Mathf.Sin(pos * 2 * Mathf.PI));
             t = 0;
+        }
+    }
+
+    void SpawnObject()
+    {
+        GameObject go = Instantiate(targetObject);
+        float pos = Random.Range(0f, 1f) * 2 * Mathf.PI;
+        go.transform.position = ((Vector2)targetObject.transform.position) * new Vector2(Mathf.Cos(pos), Mathf.Sin(pos));
+    }
+
+    void OnBeat(int bar, int beat)
+    {
+        if ((beat == 1 || beat == 3) && Random.Range(0.0f, 1.0f) > .5f)
+        {
+            SpawnObject();
+        }
+        else if (Random.Range(0.0f, 1.0f) > .75f)
+        {
+            SpawnObject();
+
         }
     }
 }
