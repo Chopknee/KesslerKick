@@ -50,6 +50,13 @@ public class Meteorite : MonoBehaviour
             pulse += pulsesPerSecond * Time.deltaTime;
             Pulse();
         }
+        else
+        {
+            Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
+            bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+            if (!onScreen)
+                Kill();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision) {
@@ -65,6 +72,7 @@ public class Meteorite : MonoBehaviour
     }
 
     public void Kill() {
+        SoundManager.Instance.RemoveBeatCallback(OnBeat);
         Destroy(gameObject);
     }
 
