@@ -987,6 +987,51 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: orbitalBody
+      value: 
+      objectReference: {fileID: 1465249673}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: accelerationSpeed
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: altitudeAxis
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: altitudeDeceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: maxAltitude
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: minAltitude
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: maxAltitudeSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: altSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: altAcceleration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3668977934680423022, guid: 1fbcad1fa183d9445a013ab419cdc47f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1041,51 +1086,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: orbitalBody
-      value: 
-      objectReference: {fileID: 1465249673}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: accelerationSpeed
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: altitudeAxis
-      value: Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: altitudeDeceleration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: maxAltitude
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: minAltitude
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: maxAltitudeSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: altSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
-        type: 3}
-      propertyPath: altAcceleration
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1318960428, guid: 1fbcad1fa183d9445a013ab419cdc47f, type: 3}
       propertyPath: m_BodyType
