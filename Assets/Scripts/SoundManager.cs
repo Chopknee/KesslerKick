@@ -32,8 +32,9 @@ public class SoundManager : MonoBehaviour
                         var sm = new GameObject("Sound Manager");
                         instance = sm.AddComponent<SoundManager>();
 
-                        DontDestroyOnLoad(sm);
                     }
+
+                    DontDestroyOnLoad(instance);
                 }
 
                 return instance;
@@ -104,7 +105,7 @@ public class SoundManager : MonoBehaviour
     {
         var eventEmitter = GetEmitter(target);
 
-        if (eventEmitter.Event != PlayerThruster)
+        if (eventEmitter == null || eventEmitter.Event != PlayerThruster)
             return;
         
         eventEmitter.SetParameter("Power", 0.0f);
