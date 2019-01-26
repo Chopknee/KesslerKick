@@ -49,7 +49,10 @@ public class SoundManager : MonoBehaviour
     private void OnDestroy()
     {
         if (musicInstance.isValid())
+        {
             musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            musicInstance.clearHandle();
+        }
 
         shuttingDown = true;
     }
