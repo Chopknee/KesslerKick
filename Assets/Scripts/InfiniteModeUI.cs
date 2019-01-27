@@ -28,7 +28,7 @@ public class InfiniteModeUI : MonoBehaviour
 
     public void OnHitsIncrease() {
         hits++;
-        hitsText.text = string.Format("Hits: {0, 0:D3} ", hits);
+        //hitsText.text = string.Format("Hits: {0, 0:D3} ", hits);
 
         if (hits % 12 == 0)
         {
@@ -39,6 +39,6 @@ public class InfiniteModeUI : MonoBehaviour
 
     public void OnMissesIncrease() {
         misses++;
-        missesText.text = string.Format("Misses: {0, 0:D3} ", misses);
+        //missesText.text = string.Format("Misses: {0, 0:D3} ", misses);
     }
 }

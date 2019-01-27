@@ -14,6 +14,7 @@ public class ShipControls : MonoBehaviour
 
     public string accelerationAxis;
     public string altitudeAxis;
+    public string fireButton;
     //public string accelerateCClockwise;
     private Vector2 lastPosition;
     private float percentAround = 0;
@@ -92,6 +93,18 @@ public class ShipControls : MonoBehaviour
         //Calculating velocity for hitting rocks
         velocity = (Vector2)transform.position - lastPosition * Time.deltaTime;
         lastPosition = transform.position;
+
+        if (Input.GetButtonDown(fireButton)) {
+            //Fire any held meteorites
+            GrabbableMeteor[] heldMeteors = GetComponentsInChildren<GrabbableMeteor>();
+            foreach (GrabbableMeteor meteor in heldMeteors) {
+                meteor.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                meteor.transform.parent = null;
+                //Fire the meteor in the "forward" facing direction
+                meteor.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 400);
+                orbt = -currentSpeed * (slowdownPercent/4);
+            }
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
