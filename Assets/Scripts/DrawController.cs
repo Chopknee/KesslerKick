@@ -35,7 +35,7 @@ public class DrawController : MonoBehaviour
     void OnClick()
     {
         SoundManager.Instance.StopAmbientMusic();
-        SoundManager.Instance.PlayUiStart(gameObject);
+        SoundManager.Instance.PlayUiStart();
         SceneManager.LoadScene("2DNavigation");
     }
 }

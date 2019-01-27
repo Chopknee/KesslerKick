@@ -18,13 +18,13 @@ public class MainMenuUI : MonoBehaviour
     }
 
     public void OnPlayClicked() {
-        SoundManager.Instance.PlayUiButton(gameObject);
+        SoundManager.Instance.PlayUiButton();
         SoundManager.Instance.StopMenuMusic();
         SceneManager.LoadScene("Drawing");
     }
 
     public void Quit() {
-        SoundManager.Instance.PlayUiQuit(gameObject);
+        SoundManager.Instance.PlayUiQuit();
         Application.Quit();
     }
 }

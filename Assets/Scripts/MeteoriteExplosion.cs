@@ -9,7 +9,7 @@ public class MeteoriteExplosion : MonoBehaviour
     void Start()
     {
         if (GetComponent<ParticleSystem>() != null) {
-            Invoke("Kill", GetComponent<ParticleSystem>().startLifetime);
+            Invoke("Kill", GetComponent<ParticleSystem>().main.startLifetime.constant);
             GetComponent<ParticleSystem>().Play();
             if (SceneManager.GetActiveScene().name != "MainMenu")
                 SoundManager.Instance.PlayPlanetHit(gameObject);

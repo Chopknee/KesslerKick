@@ -13,49 +13,54 @@ public class EarthTrigger : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject[] earthChunks;
     public float explosionForceMultiplier = 20000;
-    public bool destryoed = false;
+    public bool destroyed = false;
+
     public void OnCollisionEnter2D(Collision2D collision) {
+
         if (collision.gameObject.tag.Equals("Meteorite")) {
             OnMiss?.Invoke();
-            if (destryoed) { return; }
-            if (explosionPrefab != null) {
-                /*
-                //GameObject fb = Instantiate(explosionPrefab);
-                //fb.transform.position = collision.transform.position;
-                //Point away from the planet
-                Vector3 point = collision.transform.position - transform.position;
-                point.Normalize();
-                fb.transform.rotation = Quaternion.LookRotation(point);
-                */
-                if (SceneManager.GetActiveScene().name != "MainMenu")
-                {
-                    hits++;
-                    if (hits >= maxHits) {
-                        destryoed = true;
-                        //Game over!
-                        FinalBoss.KillMetors();
-                        InfiniteMode.CanSpawn = false;
-                        FinalBoss.CanShoot = false;
-                        Invoke("SwitchScene", 20);
-                        //"Break" apart the world.
-                        foreach (GameObject go in earthChunks) {
-                            GameObject newGo = Instantiate(go);
-                            newGo.transform.position = Vector3.zero;
-                            Vector2 force = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                            force *= explosionForceMultiplier;
-                            Debug.Log(force);
-                            newGo.GetComponent<Rigidbody2D>().AddForce(force);
-                        }
-                        foreach (Renderer rend in GetComponentsInChildren<Renderer>()) {
-                            rend.enabled = false;
-                        }
-                    }
-                }
-           }
-            collision.gameObject.GetComponent<Meteorite>().Kill();
+            TakeHit(collision.gameObject);
+        }
+    }
+
+    public void TakeHit(GameObject collision)
+    {
+        if (explosionPrefab == null)
+            return;
+
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            hits++;
+            if (hits >= maxHits && !destroyed) {
+                StartEndGame();
+            }
         }
 
+        collision.gameObject.GetComponent<Meteorite>().Kill();
+    }
 
+    public void StartEndGame()
+    {
+        //Game over!
+        InfiniteMode.CanSpawn = false;
+        FinalBoss.CanShoot = false;
+        FinalBoss.KillMetors();
+
+        //"Break" apart the world.
+        foreach (GameObject go in earthChunks) {
+            GameObject newGo = Instantiate(go);
+            newGo.transform.position = Vector3.zero;
+            Vector2 force = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            force *= explosionForceMultiplier;
+            newGo.GetComponent<Rigidbody2D>().AddForce(force);
+        }
+
+        foreach (Renderer rend in GetComponentsInChildren<Renderer>()) {
+            rend.enabled = false;
+        }
+
+        destroyed = true;
+        Invoke("SwitchScene", 5);
     }
 
     public void SwitchScene() {

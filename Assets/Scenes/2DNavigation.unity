@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 0
-  maxHits: 40
+  maxHits: 1
   explosionPrefab: {fileID: 3552854610530401401, guid: 82cfa1552dfd54548b81a7883cfa12a1,
     type: 3}
   earthChunks:
@@ -649,7 +649,7 @@ MonoBehaviour:
   - {fileID: 7042049734958524189, guid: caf43f0c516c996419c446ef53a1d22c, type: 3}
   - {fileID: 7582033224214043644, guid: 3e59f9d1afe490246ad9641deb7cce38, type: 3}
   explosionForceMultiplier: 50
-  destryoed: 0
+  destroyed: 0
 --- !u!1 &1535361499
 GameObject:
   m_ObjectHideFlags: 0

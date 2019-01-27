@@ -23,7 +23,7 @@ public class GameOverGUI : MonoBehaviour
         }
         else
         {
-            SoundManager.Instance.PlayGameOver(gameObject);
+            SoundManager.Instance.StartGameOverMusic();
         }
     }
 
@@ -34,11 +34,11 @@ public class GameOverGUI : MonoBehaviour
         }
         else
         {
-            SoundManager.Instance.StopSound(gameObject);
+            SoundManager.Instance.StopGameOverMusic();
         }
 
 
-        SoundManager.Instance.PlayUiButton(gameObject);
+        SoundManager.Instance.PlayUiButton();
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -52,7 +52,7 @@ public class GameOverGUI : MonoBehaviour
             SoundManager.Instance.StopSound(gameObject);
         }
 
-        SoundManager.Instance.PlayUiQuit(gameObject);
+        SoundManager.Instance.PlayUiQuit();
         Application.Quit();
     }
 }

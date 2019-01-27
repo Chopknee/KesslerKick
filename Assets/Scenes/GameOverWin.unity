@@ -112,6 +112,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &235752812
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7897371972886204909, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6791167
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3849509
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.357357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983096665349647163, guid: fe658740e5d31d04bb40600cb5ea33e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe658740e5d31d04bb40600cb5ea33e1, type: 3}
 --- !u!1 &316308242
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,8 +217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.8984, y: -3.3444}
-  m_SizeDelta: {x: -1220.2, y: -373.31}
+  m_AnchoredPosition: {x: 4.9104, y: -3.3449}
+  m_SizeDelta: {x: -2147.1, y: -373.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316308244
 MonoBehaviour:
@@ -177,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -599,6 +668,7 @@ MonoBehaviour:
   MenuButton: {fileID: 1872554968}
   QuitButton: {fileID: 389836360}
   playerMessageText: {fileID: 0}
+  IsWin: 0
 --- !u!1 &1041611038
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,7 @@ public class MainMenuMeteorShower : MonoBehaviour
     public int maxBMPMultiplier;
     public int initialPunch;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         SoundManager.Instance.AddBeatCallback(OnBeat);
     }

@@ -31,10 +31,7 @@ public class SoundManager : MonoBehaviour
                     {
                         var sm = new GameObject("Sound Manager");
                         instance = sm.AddComponent<SoundManager>();
-
                     }
-
-                    DontDestroyOnLoad(instance);
                 }
 
                 return instance;
@@ -64,6 +61,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(this);
+
         var listener = FindObjectOfType<FMODUnity.StudioListener>();
 
         if (listener == null)
@@ -167,21 +166,9 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
-    public void PlayGameOver(GameObject target)
+    public void PlayUiButton()
     {
-        var eventEmitter = GetEmitter(target);
-
-        if (eventEmitter.IsPlaying())
-            eventEmitter.Stop();
-
-        eventEmitter.Event = GameOver;
-
-        eventEmitter.Play();
-    }
-
-    public void PlayUiButton(GameObject target)
-    {
-        var eventEmitter = GetEmitter(target);
+        var eventEmitter = GetEmitter(Camera.main.gameObject);
 
         if (eventEmitter.IsPlaying())
             eventEmitter.Stop();
@@ -191,9 +178,9 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
-    public void PlayUiStart(GameObject target)
+    public void PlayUiStart()
     {
-        var eventEmitter = GetEmitter(target);
+        var eventEmitter = GetEmitter(Camera.main.gameObject);
 
         if (eventEmitter.IsPlaying())
             eventEmitter.Stop();
@@ -203,9 +190,9 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
-    public void PlayUiQuit(GameObject target)
+    public void PlayUiQuit()
     {
-        var eventEmitter = GetEmitter(target);
+        var eventEmitter = GetEmitter(Camera.main.gameObject);
 
         if (eventEmitter.IsPlaying())
             eventEmitter.Stop();
@@ -284,6 +271,23 @@ public class SoundManager : MonoBehaviour
     public void StopAmbientMusic()
     {
         if (!CheckCurrentMusicEvent(AmbientMusicEvent))
+            return;
+
+        musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
+
+        if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StartGameOverMusic()
+    {
+        SetMusicInstance(GameOver);
+        musicInstance.start();
+    }
+
+    public void StopGameOverMusic()
+    {
+        if (!CheckCurrentMusicEvent(GameOver))
             return;
 
         musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
