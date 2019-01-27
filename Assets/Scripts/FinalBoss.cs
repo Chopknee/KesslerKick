@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -159,8 +160,17 @@ public class FinalBoss : MonoBehaviour
                 
                 if (duration > 5) {
                     OnKilled?.Invoke();
+                    //Game won
                     state = 100;//Non checked state!!
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    duration = 0;
+                    GetComponent<Renderer>().enabled = false;
+                }
+                break;
+            case 100:
+                duration += Time.deltaTime;
+                if (duration > 5) {
+                    SceneManager.LoadScene("GameOverWin");
                 }
                 break;
         }
@@ -168,6 +178,10 @@ public class FinalBoss : MonoBehaviour
 
     //Call this to do the ominous spawn in animation thing.
     public void SpawnIn() {
+        GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteorite");
+        foreach (GameObject met in meteors) {
+            Destroy(met);
+        }
         state = 70;//Set to spawn in state
         transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90);//Turn toward the planet
     }
