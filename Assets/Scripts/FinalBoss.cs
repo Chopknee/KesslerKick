@@ -165,4 +165,8 @@ public class FinalBoss : MonoBehaviour
     public void TakeDamage() {
 
     }
+
+    public void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Ouch");
+    }
 }

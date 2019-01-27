@@ -19,7 +19,7 @@ public class GrabbableMeteor : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag.Equals("Player") && grabbed == false) {
+        if (collision.gameObject.tag.Equals("Player") && grabbed == false) {
             //We gotta do somethin`
             GetComponent<Meteorite>().enabled = false;
             gameObject.transform.parent = collision.gameObject.transform;
@@ -28,10 +28,14 @@ public class GrabbableMeteor : MonoBehaviour
             grabbed = true;
         }
 
-        if (collision.transform.Equals("FInalBoss") && grabbed == true) {
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag.Equals("FinalBoss") && grabbed == true) {
+            Debug.Log("You are defo crazy " + grabbed);
             //The boss needs to take damage
-            
-            GetComponent<FinalBoss>().TakeDamage();
+
+            collision.gameObject.GetComponent<FinalBoss>().TakeDamage();
             if (particleObject != null) {
                 GameObject go = Instantiate(particleObject);
                 go.transform.position = transform.position;
