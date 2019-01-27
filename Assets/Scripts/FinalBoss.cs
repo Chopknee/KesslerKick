@@ -172,6 +172,9 @@ public class FinalBoss : MonoBehaviour
                 
                 if (duration > 5) {
                     OnKilled?.Invoke();
+                    FinalBoss.CanShoot = false;
+                    InfiniteMode.CanSpawn = false;
+                    FinalBoss.KillMetors();
                     //Game won
                     state = 100;//Non checked state!!
                     //Destroy(gameObject);
