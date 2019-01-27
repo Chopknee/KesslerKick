@@ -36,6 +36,9 @@ public class ShipControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (orbitalBody == null) {
+            orbitalBody = GameObject.FindGameObjectWithTag("Earth");
+        }
         lastPosition = transform.position;
         velocity = Vector2.zero;
         GetComponentInChildren<ForceFieldTrigger>().OnTriggered += OnTriggerEnter2D;
@@ -45,8 +48,8 @@ public class ShipControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Code for controlling orbit speed.
         float orbt = 0;
-
         if (Input.GetAxis(accelerationAxis) < 0) {
             orbt = accelerationSpeed;
             SoundManager.Instance.StartThruster(gameObject);
@@ -63,10 +66,10 @@ public class ShipControls : MonoBehaviour
             if (thruster.isPlaying)
                 thruster.Stop();
         }
-
-
         currentSpeed += orbt;
         currentSpeed = Mathf.Sign(currentSpeed) * Mathf.Min(Mathf.Abs(currentSpeed), maxSpeed);
+
+
         percentAround += currentSpeed * Time.deltaTime;
 
         float alt = 0;
