@@ -16,8 +16,8 @@ ScriptedImporter:
   texturedSpriteMeshType: 0
   svgPixelsPerUnit: 100
   gradientResolution: 128
-  alignment: 0
-  customPivot: {x: 0, y: 0}
+  alignment: 9
+  customPivot: {x: 0.8875968, y: 0.06918487}
   generatePhysicsShape: 0
   preserveViewport: 0
   advancedMode: 0
@@ -40,16 +40,16 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: 
+      name: bossSprite
       originalName: 
-      pivot: {x: 0, y: 0}
-      alignment: 0
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.8875968, y: 0.06918487}
+      alignment: 9
+      border: {x: 1040, y: 0, z: 0, w: 1190}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 0
-        height: 0
+        width: 1357
+        height: 1404
       spriteID: 7fa72fbc115069a48882f42e728925dc
     PhysicsOutlines: []
