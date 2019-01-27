@@ -107,6 +107,11 @@ public class ShipControls : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+        SoundManager.Instance.StopThruster(gameObject); 
+    }
+
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag.Equals("Meteorite")) {
             if (collision.gameObject.GetComponent<Meteorite>().Hit(velocity))

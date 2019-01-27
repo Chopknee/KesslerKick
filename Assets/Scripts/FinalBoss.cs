@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FinalBoss : MonoBehaviour
 {
+    public static GameObject explosionPrefab;
     public GameObject orbitalBody;
     public GameObject projectile;
 
@@ -180,12 +181,16 @@ public class FinalBoss : MonoBehaviour
 
     //Call this to do the ominous spawn in animation thing.
     public void SpawnIn() {
-        GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteorite");
-        foreach (GameObject met in meteors) {
-            Destroy(met);
-        }
         state = 70;//Set to spawn in state
         transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90);//Turn toward the planet
+    }
+
+    public static void KillMetors()
+    {
+        GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteorite");
+        foreach (GameObject met in meteors) {
+            met.GetComponent<Meteorite>().Kill();
+        }
     }
 
     public void RotateTowardPlanet(float t) {

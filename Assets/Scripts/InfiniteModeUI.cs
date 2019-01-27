@@ -14,7 +14,7 @@ public class InfiniteModeUI : MonoBehaviour
     public int hits = 0;
     public int misses = 0;
 
-    public static float wave = 0;
+    public static float wave = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,7 @@ public class InfiniteModeUI : MonoBehaviour
         hits++;
         //hitsText.text = string.Format("Hits: {0, 0:D3} ", hits);
 
-        if (hits % 10 == 0)
+        if (hits % 2 == 0)
         {
             wave = Mathf.Min(10, ++wave);
             SoundManager.Instance.SetMusicParam("Wave", wave);
@@ -48,6 +48,8 @@ public class InfiniteModeUI : MonoBehaviour
     {
         switch(tag)
         {
+            case "Boss":
+                break;
             case "StartBoss":
                 if (boss == null)
                 {
@@ -58,6 +60,7 @@ public class InfiniteModeUI : MonoBehaviour
             case "BossKilled":
                 break;
             case "EndGame":
+                SoundManager.Instance.StopLevelMusic();
                 SceneManager.LoadScene("GameOverWin");
                 break;
             default:

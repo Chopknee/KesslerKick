@@ -2,6 +2,7 @@
 
 public class Meteorite : MonoBehaviour
 {
+    public GameObject explosionPrefab;
     public Sprite[] PossibleSprites;
 
     [Tooltip("The object to aim for when pulsing.")]
@@ -81,6 +82,14 @@ public class Meteorite : MonoBehaviour
     }
 
     public void Kill() {
+        if (explosionPrefab != null)
+        {
+            GameObject fb = Instantiate(explosionPrefab);
+            fb.transform.position = transform.position;
+            Vector3 point = transform.position - pulseTowardTarget.transform.position;
+            point.Normalize();
+            fb.transform.rotation = Quaternion.LookRotation(point);
+        }
         Destroy(gameObject);
     }
 
