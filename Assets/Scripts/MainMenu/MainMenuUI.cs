@@ -24,9 +24,8 @@ public class MainMenuUI : MonoBehaviour
     }
 
     public void OnPlayClicked() {
-        PlayButton.gameObject.SetActive(false);//Hide the play button
-        wdhmtoInput.gameObject.SetActive(true);
-        BeginButton.gameObject.SetActive(true);
+        SoundManager.Instance.StopMenuMusic();
+        SceneManager.LoadScene("Drawing");
     }
 
     public void OnBeginClicked() {

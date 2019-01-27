@@ -15,7 +15,6 @@ public class GameOverGUI : MonoBehaviour
     {
         MenuButton.onClick.AddListener(GoToMenu);
         QuitButton.onClick.AddListener(Quit);
-        playerMessageText.text = MainMenuUI.PlayerHome;
     }
 
     public void GoToMenu() {
