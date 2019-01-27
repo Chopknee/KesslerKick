@@ -96,10 +96,8 @@ public class ShipControls : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag.Equals("Meteorite")) {
-            collision.gameObject.GetComponent<Meteorite>().floatMode = true;
-            //Send the thing flying off in the direction of the ship
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(velocity * 50);
-            OnGetKnockout?.Invoke();
+            if (collision.gameObject.GetComponent<Meteorite>().Hit(velocity))
+                OnGetKnockout?.Invoke();
         }
     }
 }

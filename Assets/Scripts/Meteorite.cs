@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Meteorite : MonoBehaviour
 {
@@ -19,14 +17,8 @@ public class Meteorite : MonoBehaviour
     public AnimationCurve pulseCurve;
     public bool floatMode = false;
 
-    public delegate void Collided();
-    public event Collided OnHitPlayer;
-    public event Collided OnHitPlanet;
-
-    public delegate void Destroyed();
-    public event Destroyed OnDestroyed;
-
     private int pulseBeat;
+    private Vector3 startPoint;
 
     void Start()
     {
@@ -41,6 +33,10 @@ public class Meteorite : MonoBehaviour
         SoundManager.Instance.AddBeatCallback(OnBeat);
 
         pulseBeat = Random.Range(1, 5);
+
+        var startPoint = transform.position;
+
+        pulseMultiplier = Mathf.Max(Random.Range(1, Mathf.Max(InfiniteModeUI.wave / 5, 1)) * pulseMultiplier, pulseMultiplier);
     }
 
     // Update is called once per frame
@@ -52,6 +48,15 @@ public class Meteorite : MonoBehaviour
         }
         else
         {
+            if (this.GetComponent<Rigidbody2D>().velocity.magnitude < 2.0f)
+            {
+
+                Vector3 targetDirection = pulseTowardTarget.transform.position - transform.position;
+                targetDirection.Normalize();
+
+                rigidBody.AddForce(-targetDirection * 50);
+            }
+
             Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
             bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
             if (!onScreen)
@@ -59,16 +64,20 @@ public class Meteorite : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision) {
-        floatMode = true;
-        switch(collision.gameObject.tag) {
-            case "Player":
-                OnHitPlayer?.Invoke();
-                break;
-            case "Earth":
-                OnHitPlanet?.Invoke();
-                break;
+    public bool Hit(Vector3 velocity)
+    {
+        if (!floatMode)
+        {
+            floatMode = true;
+            SoundManager.Instance.PlayEnemyHit(gameObject);
+
+            //Send the thing flying off in the direction of the ship
+            rigidBody.AddForce(velocity * 50);
+
+            return true;
         }
+
+        return false;
     }
 
     public void Kill() {
@@ -84,7 +93,6 @@ public class Meteorite : MonoBehaviour
             targetDirection.Normalize();
             //Now the "pulsing" mechanic.
            rigidBody.velocity = targetDirection * pulseMultiplier * pulseCurve.Evaluate(pulse);
-
         }
     }
 
