@@ -8,9 +8,9 @@ public class EarthRandomizer : MonoBehaviour
     void Start()
     {
         transform.rotation = Quaternion.Euler(
-            Random.RandomRange(0f, 359f),
-            Random.RandomRange(0f, 359f),
-            Random.RandomRange(0f, 359f)
+            Random.Range(0f, 359f),
+            Random.Range(0f, 359f),
+            Random.Range(0f, 359f)
             );
     }
 
