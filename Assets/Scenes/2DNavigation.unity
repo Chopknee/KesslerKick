@@ -1011,6 +1011,11 @@ PrefabInstance:
       propertyPath: fireButton
       value: Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 3668977934680423020, guid: 1fbcad1fa183d9445a013ab419cdc47f,
+        type: 3}
+      propertyPath: accelerationSpeed
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 3668977934680423022, guid: 1fbcad1fa183d9445a013ab419cdc47f,
         type: 3}
       propertyPath: m_LocalPosition.x

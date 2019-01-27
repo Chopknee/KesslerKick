@@ -136,6 +136,6 @@ MonoBehaviour:
   state: 0
   duration: 0
   hits: 0
-  hitLimit: 4
+  hitLimit: 3
   ominousTime: 10
   slideInAltitude: 11
