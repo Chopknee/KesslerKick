@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 0
-  maxHits: 3
+  maxHits: 20
   explosionPrefab: {fileID: 3552854610530401401, guid: 82cfa1552dfd54548b81a7883cfa12a1,
     type: 3}
   earthChunks:
