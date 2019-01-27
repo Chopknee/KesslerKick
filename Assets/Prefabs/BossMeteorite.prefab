@@ -159,7 +159,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd3c5eb723b0b614d87ce9a7a4a0c71f, type: 3}
   pulseTowardTarget: {fileID: 0}
   pulsesPerSecond: 2
-  pulseMultiplier: 2.5
+  pulseMultiplier: 3.5
   pulseCurve:
     serializedVersion: 2
     m_Curve:
