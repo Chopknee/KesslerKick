@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9fe54f717536749927122588c674dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorite: {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
+  meteorite: {fileID: 26, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
   spawnRadius: 8
   targetObject: {fileID: 576683839}
   baseBPM: 120
