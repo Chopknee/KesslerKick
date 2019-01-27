@@ -12,6 +12,7 @@ public class InfiniteModeUI : MonoBehaviour
     public EarthTrigger planetEarth;
 
     public int hits = 0;
+    public float wave = 0;
     public int misses = 0;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,12 @@ public class InfiniteModeUI : MonoBehaviour
     public void OnHitsIncrease() {
         hits++;
         hitsText.text = string.Format("Hits: {0, 0:D3} ", hits);
+
+        if (hits % 15 == 0)
+        {
+            wave++;
+            SoundManager.Instance.SetMusicParam("Wave", wave);
+        }
     }
 
     public void OnMissesIncrease() {

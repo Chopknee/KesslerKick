@@ -81,6 +81,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        beatCallback = new FMOD.Studio.EVENT_CALLBACK(SoundManager.BeatEventCallback);
+    }
+
     // SFX
     public string PlayerThruster;
     public string[] EnemyHitEvents, PlanetHitEvents, EnemyExplodeEvents;
@@ -175,36 +180,39 @@ public class SoundManager : MonoBehaviour
 
     // Music
 
-    public string MusicEvent;
+    FMOD.Studio.EventInstance musicInstance;
+    public string LevelMusicEvent;
+    public string MenuMusicEvent;
 
-    public void StartMusic()
+    public void StartLevelMusic()
     {
-        if (musicInstance.isValid())
-        {
-            FMOD.Studio.PLAYBACK_STATE state;
-            musicInstance.getPlaybackState(out state);
-
-            if (state != FMOD.Studio.PLAYBACK_STATE.STOPPED)
-                return;
-        }
-
-        // Explicitly create the delegate object and assign it to a member so it doesn't get freed
-        // by the garbage collected while it's being used
-        beatCallback = new FMOD.Studio.EVENT_CALLBACK(SoundManager.BeatEventCallback);
-
-        musicInstance = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
-
-        musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
+        SetMusicInstance(LevelMusicEvent);
         musicInstance.start();
     }
 
-    public void StopMusic()
+    public void StopLevelMusic()
     {
-        if (!musicInstance.isValid())
+        if (!CheckCurrentMusicEvent(LevelMusicEvent))
             return;
 
-        FMOD.Studio.PLAYBACK_STATE state;
-        musicInstance.getPlaybackState(out state);
+        musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
+
+        if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StartMenuMusic()
+    {
+        SetMusicInstance(MenuMusicEvent);
+        musicInstance.start();
+    }
+
+    public void StopMenuMusic()
+    {
+        if (!CheckCurrentMusicEvent(MenuMusicEvent))
+            return;
+
+        musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
 
         if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
             musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -231,9 +239,30 @@ public class SoundManager : MonoBehaviour
         return value;
     }
 
+    private void SetMusicInstance(string musicEvent) {
+        if (CheckCurrentMusicEvent(musicEvent))
+            return;
+
+        if (musicInstance.isValid())
+            musicInstance.clearHandle();
+
+        musicInstance = FMODUnity.RuntimeManager.CreateInstance(musicEvent);
+        musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
+    }
+
+    private bool CheckCurrentMusicEvent(string musicEvent)
+    {
+        if (!musicInstance.isValid())
+            return false;
+
+        musicInstance.getDescription(out FMOD.Studio.EventDescription description);
+        description.getPath(out string path);
+
+        return path == musicEvent;
+    }
+
     // Beat Tracking
 
-    FMOD.Studio.EventInstance musicInstance;
     FMOD.Studio.EVENT_CALLBACK beatCallback;
 
     public delegate void BeatCallback(int bar, int beat);

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InfiniteMode : MonoBehaviour
 {
-
     public GameObject[] meteorites;
     public float spawnRadius;
     public GameObject targetObject;
@@ -13,7 +12,7 @@ public class InfiniteMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.Instance.StartMusic();
+        SoundManager.Instance.StartLevelMusic();
         SoundManager.Instance.AddBeatCallback(OnBeat);
     }
 

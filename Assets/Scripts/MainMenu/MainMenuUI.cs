@@ -16,6 +16,7 @@ public class MainMenuUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.StartMenuMusic();
         PlayButton.onClick.AddListener(OnPlayClicked);
         BeginButton.onClick.AddListener(OnBeginClicked);
         QuitButton.onClick.AddListener(Quit);
@@ -31,6 +32,7 @@ public class MainMenuUI : MonoBehaviour
     public void OnBeginClicked() {
         //Transition the scene.
         //Save the text somehow.
+        SoundManager.Instance.StopMenuMusic();
         SceneManager.LoadScene("2DNavigation");
     }
 
