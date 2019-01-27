@@ -988,7 +988,7 @@ MonoBehaviour:
   meteorites:
   - {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
   spawnRadius: 8
-  targetObject: {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
+  targetObject: {fileID: 26, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
 --- !u!1001 &3668977934446774649
 PrefabInstance:
   m_ObjectHideFlags: 0
