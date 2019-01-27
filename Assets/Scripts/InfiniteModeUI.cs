@@ -44,6 +44,11 @@ public class InfiniteModeUI : MonoBehaviour
         //missesText.text = string.Format("Misses: {0, 0:D3} ", misses);
     }
 
+    public void OnDestroy()
+    {
+        SoundManager.Instance.RemoveTimelineCallback(OnTimeline);
+    }
+
     void OnTimeline(string tag)
     {
         switch(tag)

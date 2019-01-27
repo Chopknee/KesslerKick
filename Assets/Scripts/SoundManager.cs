@@ -81,6 +81,7 @@ public class SoundManager : MonoBehaviour
 
         beatCallback = new FMOD.Studio.EVENT_CALLBACK(SoundManager.BeatEventCallback);
         beatCallbacks = new List<BeatCallback>();
+        timelineCallbacks = new List<TimelineCallback>();
     }
 
     private void OnLevelWasLoaded(int level)
