@@ -224,8 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9fe54f717536749927122588c674dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorite: {fileID: 4531048044492846369, guid: 6138299ec7cb98e42a418110fffcdeb2,
-    type: 3}
+  meteorite: {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
   spawnRadius: 8
   targetObject: {fileID: 576683839}
   baseBPM: 120
@@ -318,8 +317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed3a0d5b4e359a4f8fbbaf8a8211e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 0
+  maxHits: 20
   explosionPrefab: {fileID: 3552854610530401401, guid: 82cfa1552dfd54548b81a7883cfa12a1,
     type: 3}
+  earthChunks: []
+  explosionForceMultiplier: 20000
+  destryoed: 0
 --- !u!1001 &623605844
 PrefabInstance:
   m_ObjectHideFlags: 0

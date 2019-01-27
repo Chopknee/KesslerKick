@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EarthTrigger : MonoBehaviour
 {
     public int hits = 0;
-    public int maxHits = 20;
+    public int maxHits = 40;
 
     public delegate void Miss();
     public event Miss OnMiss;
@@ -27,25 +27,31 @@ public class EarthTrigger : MonoBehaviour
                 point.Normalize();
                 fb.transform.rotation = Quaternion.LookRotation(point);
                 */
-                hits++;
-                if (hits >= maxHits) {
-                    destryoed = true;
-                    //Game over!
-                    Invoke("SwitchScene", 20);
-                    //"Break" apart the world.
-                    foreach (GameObject go in earthChunks) {
-                        GameObject newGo = Instantiate(go);
-                        newGo.transform.position = Vector3.zero;
-                        Vector2 force = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                        force *= explosionForceMultiplier;
-                        Debug.Log(force);
-                        newGo.GetComponent<Rigidbody2D>().AddForce(force);
-                    }
-                    foreach (Renderer rend in GetComponentsInChildren<Renderer>()) {
-                        rend.enabled = false;
+                if (SceneManager.GetActiveScene().name != "MainMenu")
+                {
+                    hits++;
+                    if (hits >= maxHits) {
+                        destryoed = true;
+                        //Game over!
+                        FinalBoss.KillMetors();
+                        InfiniteMode.CanSpawn = false;
+                        FinalBoss.CanShoot = false;
+                        Invoke("SwitchScene", 20);
+                        //"Break" apart the world.
+                        foreach (GameObject go in earthChunks) {
+                            GameObject newGo = Instantiate(go);
+                            newGo.transform.position = Vector3.zero;
+                            Vector2 force = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+                            force *= explosionForceMultiplier;
+                            Debug.Log(force);
+                            newGo.GetComponent<Rigidbody2D>().AddForce(force);
+                        }
+                        foreach (Renderer rend in GetComponentsInChildren<Renderer>()) {
+                            rend.enabled = false;
+                        }
                     }
                 }
-            }
+           }
             collision.gameObject.GetComponent<Meteorite>().Kill();
         }
 
@@ -53,6 +59,7 @@ public class EarthTrigger : MonoBehaviour
     }
 
     public void SwitchScene() {
+        SoundManager.Instance.StopSound(GameObject.FindGameObjectWithTag("Player"));
         SoundManager.Instance.StopLevelMusic();
         SceneManager.LoadScene("GameOverDeath");
     }

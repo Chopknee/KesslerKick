@@ -215,6 +215,14 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
+    public void StopSound(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+    }
+
     private FMODUnity.StudioEventEmitter GetEmitter(GameObject obj)
     {
         var eventEmitter = obj.GetComponent<FMODUnity.StudioEventEmitter>();

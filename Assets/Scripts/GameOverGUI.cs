@@ -14,17 +14,29 @@ public class GameOverGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        IsWin = SceneManager.GetActiveScene().name == "GameOverWin"; 
-        if (IsWin)
-            SoundManager.Instance.StartAmbientMusic();
-
         MenuButton.onClick.AddListener(GoToMenu);
         QuitButton.onClick.AddListener(Quit);
+        IsWin = SceneManager.GetActiveScene().name == "GameOverWin"; 
+        if (IsWin)
+        {
+            SoundManager.Instance.StartAmbientMusic();
+        }
+        else
+        {
+            SoundManager.Instance.PlayGameOver(gameObject);
+        }
     }
 
     public void GoToMenu() {
         if (IsWin)
+        {
             SoundManager.Instance.StopAmbientMusic();
+        }
+        else
+        {
+            SoundManager.Instance.StopSound(gameObject);
+        }
+
 
         SoundManager.Instance.PlayUiButton(gameObject);
         SceneManager.LoadScene("MainMenu");
@@ -32,7 +44,13 @@ public class GameOverGUI : MonoBehaviour
 
     public void Quit() {
         if (IsWin)
+        {
             SoundManager.Instance.StopAmbientMusic();
+        }
+        else
+        {
+            SoundManager.Instance.StopSound(gameObject);
+        }
 
         SoundManager.Instance.PlayUiQuit(gameObject);
         Application.Quit();

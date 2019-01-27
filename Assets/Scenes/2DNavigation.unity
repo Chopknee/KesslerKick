@@ -248,6 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShip: {fileID: 691693880}
   planetEarth: {fileID: 1465249679}
+  BossPrefab: {fileID: 7148847352516639294, guid: bbd59509df020054ba409f289ab03f20,
+    type: 3}
   hits: 0
   misses: 0
 --- !u!1 &519420028
@@ -638,7 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 0
-  maxHits: 20
+  maxHits: 40
   explosionPrefab: {fileID: 3552854610530401401, guid: 82cfa1552dfd54548b81a7883cfa12a1,
     type: 3}
   earthChunks:
@@ -983,10 +985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6a91fa049e55441a2dabd7b97dda80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorites: []
+  meteorites:
+  - {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
   spawnRadius: 8
-  targetObject: {fileID: 4531048044492846369, guid: 6138299ec7cb98e42a418110fffcdeb2,
-    type: 3}
+  targetObject: {fileID: 25, guid: 6138299ec7cb98e42a418110fffcdeb2, type: 3}
 --- !u!1001 &3668977934446774649
 PrefabInstance:
   m_ObjectHideFlags: 0

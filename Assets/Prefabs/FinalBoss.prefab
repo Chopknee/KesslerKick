@@ -135,3 +135,7 @@ MonoBehaviour:
   turningTime: 3
   state: 0
   duration: 0
+  hits: 0
+  hitLimit: 4
+  ominousTime: 10
+  slideInAltitude: 11

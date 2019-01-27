@@ -31,12 +31,15 @@ public class FinalBoss : MonoBehaviour
 
     public float hits = 0;
     public float hitLimit = 4;
-    public float ominousTime = 10;//Time boss takes to slide in scene
+    public float ominousTime = 5;//Time boss takes to slide in scene
     public float slideInAltitude = 11;//How far off screen is the boss when it spawns?
     float startAltitude = 0;
     //Maybe useful?
     public delegate void Killed();
     public event Killed OnKilled;
+
+    public static bool CanShoot = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,11 @@ public class FinalBoss : MonoBehaviour
             orbitalBody = GameObject.FindGameObjectWithTag("Earth");
         }
         startAltitude = altitude;
+
+        state = 70;//Set to spawn in state
+        transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90);//Turn toward the planet
+        MovingOnOrbit();
+        altitude = Mathf.Lerp(slideInAltitude, startAltitude, duration / ominousTime);
     }
 
     // Update is called once per frame
@@ -119,8 +127,11 @@ public class FinalBoss : MonoBehaviour
                 break;
             case 51:
                 //Shoot
-                GameObject go = Instantiate(projectile);
-                go.transform.position = (Vector2)transform.position + ((Vector2)transform.up*1.5f);
+                if (CanShoot)
+                {
+                    GameObject go = Instantiate(projectile);
+                    go.transform.position = (Vector2)transform.position + ((Vector2)transform.up*1.5f);
+                }
                 state = 60;
                 startRotation = transform.rotation.eulerAngles.z;
                 //Pick a direction at random.
@@ -177,12 +188,7 @@ public class FinalBoss : MonoBehaviour
                 }
                 break;
         }
-    }
-
-    //Call this to do the ominous spawn in animation thing.
-    public void SpawnIn() {
-        state = 70;//Set to spawn in state
-        transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90);//Turn toward the planet
+        duration += Time.deltaTime;
     }
 
     public static void KillMetors()

@@ -542,7 +542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What does home mean to you?
+  m_Text: Draw what home mean to you?
 --- !u!222 &1111255902
 CanvasRenderer:
   m_ObjectHideFlags: 0

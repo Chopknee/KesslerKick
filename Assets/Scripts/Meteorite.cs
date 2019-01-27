@@ -82,7 +82,7 @@ public class Meteorite : MonoBehaviour
     }
 
     public void Kill() {
-        if (explosionPrefab != null)
+        if (explosionPrefab != null && pulseTowardTarget != null)
         {
             GameObject fb = Instantiate(explosionPrefab);
             fb.transform.position = transform.position;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InfiniteMode : MonoBehaviour
 {
+    public static bool CanSpawn = true;
     public GameObject[] meteorites;
     public float spawnRadius;
     public GameObject targetObject;
@@ -29,6 +30,9 @@ public class InfiniteMode : MonoBehaviour
 
     void OnBeat(int bar, int beat)
     {
+        if (!CanSpawn)
+            return;
+
         if ((beat == 1 || beat == 3) && Random.Range(0.0f, 1.0f) > .6f)
         {
             SpawnObject();
