@@ -248,6 +248,13 @@ public class SoundManager : MonoBehaviour
     public void StartMenuMusic()
     {
         SetMusicInstance(MenuMusicEvent);
+
+        FMOD.Studio.PLAYBACK_STATE state;
+        musicInstance.getPlaybackState(out state);
+
+        if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            return;
+
         musicInstance.start();
     }
 

@@ -28,7 +28,7 @@ public class EarthTrigger : MonoBehaviour
         if (explosionPrefab == null)
             return;
 
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name == "2DNavigation")
         {
             hits++;
             if (hits >= maxHits && !destroyed) {

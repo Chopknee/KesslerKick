@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     public Button PlayButton;
+    public Button CrewButton;
     public Button QuitButton;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class MainMenuUI : MonoBehaviour
     {
         SoundManager.Instance.StartMenuMusic();
         PlayButton.onClick.AddListener(OnPlayClicked);
+        CrewButton.onClick.AddListener(Crew);
         QuitButton.onClick.AddListener(Quit);
     }
 
@@ -21,6 +23,12 @@ public class MainMenuUI : MonoBehaviour
         SoundManager.Instance.PlayUiButton();
         SoundManager.Instance.StopMenuMusic();
         SceneManager.LoadScene("Drawing");
+    }
+
+    public void Crew()
+    {
+        SoundManager.Instance.PlayUiButton();
+        SceneManager.LoadScene("Credits");
     }
 
     public void Quit() {

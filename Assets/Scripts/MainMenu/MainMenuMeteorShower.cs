@@ -11,10 +11,19 @@ public class MainMenuMeteorShower : MonoBehaviour
     [Range(1, 100)]
     public int maxBMPMultiplier;
     public int initialPunch;
+    bool callbackSet = false;
 
     private void Start()
     {
-        SoundManager.Instance.AddBeatCallback(OnBeat);
+    }
+
+    private void Update()
+    {
+        if (!callbackSet)
+        {
+            SoundManager.Instance.AddBeatCallback(OnBeat);
+            callbackSet = true;
+        }
     }
 
     void OnBeat(int bar, int beat)
