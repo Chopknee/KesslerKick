@@ -44,3 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: EarthChunk1
+    uniqueID: 2475190005
+    locked: 0
+  - name: EarthChunk2
+    uniqueID: 3101560919
+    locked: 0
+  - name: EarthChunk3
+    uniqueID: 889604863
+    locked: 0
+  - name: EarthChunk4
+    uniqueID: 1961010611
+    locked: 0
