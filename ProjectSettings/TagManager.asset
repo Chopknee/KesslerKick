@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Earth
   - Meteorite
+  - FinalBoss
   layers:
   - Default
   - TransparentFX

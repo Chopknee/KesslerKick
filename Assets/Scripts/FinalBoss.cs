@@ -6,7 +6,6 @@ public class FinalBoss : MonoBehaviour
 {
     public GameObject orbitalBody;
     public GameObject projectile;
-    public Vector2 projectileOffset;
 
     public float currentSpeed = 0;
     public float maxSpeed;
@@ -114,7 +113,7 @@ public class FinalBoss : MonoBehaviour
                 //Shoot
                 Debug.Log("Firing missiles or whatever.");
                 GameObject go = Instantiate(projectile);
-                go.transform.position = (Vector2)transform.position + projectileOffset;
+                go.transform.position = (Vector2)transform.position + ((Vector2)transform.up*1.5f);
                 state = 60;
                 startRotation = transform.rotation.eulerAngles.z;
                 //Pick a direction at random.
@@ -160,5 +159,14 @@ public class FinalBoss : MonoBehaviour
         //Calculating velocity for hitting rocks
         velocity = (Vector2)transform.position - lastPosition * Time.deltaTime;
         lastPosition = transform.position;
+    }
+
+    //The boss got hit!
+    public void TakeDamage() {
+
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Ouch");
     }
 }
