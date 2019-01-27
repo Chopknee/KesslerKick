@@ -165,6 +165,8 @@ public class FinalBoss : MonoBehaviour
                     //Destroy(gameObject);
                     duration = 0;
                     GetComponent<Renderer>().enabled = false;
+                    SoundManager.Instance.SetMusicParam("BossKilled", 1.0f);
+                    SoundManager.Instance.PlayBossDeath(gameObject);
                 }
                 break;
             case 100:
@@ -211,9 +213,11 @@ public class FinalBoss : MonoBehaviour
     //The boss got hit!
     public void TakeDamage() {
         hits++;
+        SoundManager.Instance.PlayBossMelody(gameObject);
         if (hits >= hitLimit) {
             state = 80;
             duration = 0;
         }
     }
+
 }

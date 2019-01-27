@@ -155,7 +155,7 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
-    public void PlayBossDeathy(GameObject target)
+    public void PlayBossDeath(GameObject target)
     {
         var eventEmitter = GetEmitter(target);
 
@@ -333,6 +333,8 @@ public class SoundManager : MonoBehaviour
 
     public delegate void BeatCallback(int bar, int beat);
     private List<BeatCallback> beatCallbacks = new List<BeatCallback>();
+    public delegate void TimelineCallback(string tag);
+    private List<TimelineCallback> timelineCallbacks = new List<TimelineCallback>();
 
     public void AddBeatCallback(BeatCallback cb)
     {
@@ -348,6 +350,22 @@ public class SoundManager : MonoBehaviour
     private void TriggerBeatCallbacks(int bar, int beat)
     {
         beatCallbacks.ForEach(cb => cb?.Invoke(bar, beat));
+    }
+
+    public void AddTimelineCallback(TimelineCallback cb)
+    {
+        timelineCallbacks.Add(cb);
+    }
+
+    public void RemoveTimelineCallback(TimelineCallback cb)
+    {
+        if (timelineCallbacks.Contains(cb))
+            timelineCallbacks.Remove(cb);
+    }
+
+    private void TriggerTimelineCallback(string tab)
+    {
+        timelineCallbacks.ForEach(cb => cb?.Invoke(tag));
     }
     
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
@@ -367,7 +385,8 @@ public class SoundManager : MonoBehaviour
                 break;
             case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER:
                 {
-                    //var parameter = (FMOD.Studio.TIMELINE_MARKER_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_MARKER_PROPERTIES));
+                    var parameter = (FMOD.Studio.TIMELINE_MARKER_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_MARKER_PROPERTIES));
+                    SoundManager.Instance.TriggerTimelineCallback(parameter.name);
                 }
                 break;
         }

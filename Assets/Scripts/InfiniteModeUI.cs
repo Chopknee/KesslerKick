@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InfiniteModeUI : MonoBehaviour
 {
     public ShipControls playerShip;
     public EarthTrigger planetEarth;
+    public GameObject BossPrefab;
+    GameObject boss;
 
     public int hits = 0;
     public int misses = 0;
@@ -21,6 +24,8 @@ public class InfiniteModeUI : MonoBehaviour
 
         playerShip.OnGetKnockout += OnHitsIncrease;
         planetEarth.OnMiss += OnMissesIncrease;
+
+        SoundManager.Instance.AddTimelineCallback(OnTimeline);
     }
 
     public void OnHitsIncrease() {
@@ -38,4 +43,26 @@ public class InfiniteModeUI : MonoBehaviour
         misses++;
         //missesText.text = string.Format("Misses: {0, 0:D3} ", misses);
     }
+
+    void OnTimeline(string tag)
+    {
+        switch(tag)
+        {
+            case "StartBoss":
+                if (boss == null)
+                {
+                    boss = GameObject.Instantiate(BossPrefab);
+                    boss.GetComponent<FinalBoss>().SpawnIn();
+                }
+                break;
+            case "BossKilled":
+                break;
+            case "EndGame":
+                SceneManager.LoadScene("GameOverWin");
+                break;
+            default:
+                break;
+        }
+    }
+
 }
