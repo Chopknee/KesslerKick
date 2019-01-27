@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MeteoriteExplosion : MonoBehaviour
 {
@@ -11,7 +10,9 @@ public class MeteoriteExplosion : MonoBehaviour
             Debug.Log("Particle system component not present!");
             Invoke("Kill", GetComponent<ParticleSystem>().startLifetime);
             GetComponent<ParticleSystem>().Play();
-            SoundManager.Instance.PlayPlanetHit(gameObject);
+
+            if (SceneManager.GetActiveScene().name != "MainMenu")
+                SoundManager.Instance.PlayPlanetHit(gameObject);
         }
     }
 

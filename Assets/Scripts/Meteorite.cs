@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Meteorite : MonoBehaviour
 {
@@ -72,6 +70,7 @@ public class Meteorite : MonoBehaviour
         {
             floatMode = true;
             SoundManager.Instance.PlayEnemyHit(gameObject);
+
             //Send the thing flying off in the direction of the ship
             rigidBody.AddForce(velocity * 50);
 
