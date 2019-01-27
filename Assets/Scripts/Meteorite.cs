@@ -32,7 +32,7 @@ public class Meteorite : MonoBehaviour
 
         SoundManager.Instance.AddBeatCallback(OnBeat);
 
-        pulseBeat = Random.Range(1, 5);
+        pulseBeat = Random.Range(1, 6);
 
         var startPoint = transform.position;
 
@@ -98,7 +98,7 @@ public class Meteorite : MonoBehaviour
 
     private void OnBeat(int bar, int beat)
     {
-        if (beat == pulseBeat || ((bar + 3) % 4 == 0 && beat == 1))
+        if (beat == pulseBeat || ((bar + 3) % 4 == 0 && beat == 1) || pulseBeat == 5)
             pulse = 0;
     }
 }
