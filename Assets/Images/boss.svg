@@ -13,11 +13,11 @@
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
-   id="svg5947"
+   id="svg7668"
    inkscape:version="0.92.0 r15299"
    sodipodi:docname="boss.svg">
   <defs
-     id="defs5941" />
+     id="defs7662" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="400"
-     inkscape:cy="560"
+     inkscape:cx="40"
+     inkscape:cy="1131.4286"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -37,7 +37,7 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
-     id="metadata5944">
+     id="metadata7665">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -53,7 +53,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       transform="translate(5.8569441,-6.1122776)"
+       transform="translate(20.220039,-25.011087)"
        id="g5913">
       <rect
          y="48.291664"
