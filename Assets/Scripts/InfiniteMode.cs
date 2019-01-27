@@ -14,6 +14,10 @@ public class InfiniteMode : MonoBehaviour
     {
         SoundManager.Instance.StartLevelMusic();
         SoundManager.Instance.AddBeatCallback(OnBeat);
+
+        FinalBoss.CanShoot = true;
+        InfiniteMode.CanSpawn = true;
+        InfiniteModeUI.wave = 0;
     }
 
     // Update is called once per frame

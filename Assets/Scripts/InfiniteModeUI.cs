@@ -60,6 +60,9 @@ public class InfiniteModeUI : MonoBehaviour
                 }
                 break;
             case "BossKilled":
+                FinalBoss.KillMetors();
+                InfiniteMode.CanSpawn = false;
+                FinalBoss.CanShoot = false;
                 break;
             case "EndGame":
                 SoundManager.Instance.StopSound(playerShip.gameObject);

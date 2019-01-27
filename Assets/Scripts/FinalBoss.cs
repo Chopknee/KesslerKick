@@ -172,22 +172,18 @@ public class FinalBoss : MonoBehaviour
                 
                 if (duration > 5) {
                     OnKilled?.Invoke();
-                    FinalBoss.CanShoot = false;
-                    InfiniteMode.CanSpawn = false;
-                    FinalBoss.KillMetors();
                     //Game won
                     state = 100;//Non checked state!!
                     //Destroy(gameObject);
                     duration = 0;
                     GetComponent<Renderer>().enabled = false;
-                    SoundManager.Instance.SetMusicParam("BossKilled", 1.0f);
                     SoundManager.Instance.PlayBossDeath(gameObject);
                 }
                 break;
             case 100:
                 duration += Time.deltaTime;
                 if (duration > 5) {
-                    SceneManager.LoadScene("GameOverWin");
+                    SoundManager.Instance.StopThruster(GameObject.FindGameObjectWithTag("Player"));
                 }
                 break;
         }
@@ -229,6 +225,7 @@ public class FinalBoss : MonoBehaviour
         hits++;
         SoundManager.Instance.PlayBossMelody(gameObject);
         if (hits >= hitLimit) {
+            SoundManager.Instance.SetMusicParam("BossKilled", 1.0f);
             state = 80;
             duration = 0;
         }

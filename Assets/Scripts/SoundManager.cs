@@ -204,6 +204,9 @@ public class SoundManager : MonoBehaviour
 
     public void StopSound(GameObject target)
     {
+        if (target == null)
+            return;
+
         var eventEmitter = GetEmitter(target);
 
         if (eventEmitter.IsPlaying())
