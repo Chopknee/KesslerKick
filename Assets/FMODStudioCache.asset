@@ -13,207 +13,23 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114756073436157048}
-  - {fileID: 114659935364557756}
-  - {fileID: 114599374334509162}
-  - {fileID: 114049774013645382}
+  - {fileID: 114449840389551684}
+  - {fileID: 114882826418509972}
+  - {fileID: 114979236074351486}
+  - {fileID: 114277806541028938}
   EditorEvents:
-  - {fileID: 114106706905051040}
-  - {fileID: 114523900743405516}
-  - {fileID: 114086289918540606}
-  - {fileID: 114760303278182616}
-  - {fileID: 114809413770903824}
+  - {fileID: 114849045558804882}
+  - {fileID: 114455477352789318}
+  - {fileID: 114844975451760334}
+  - {fileID: 114788678790526360}
+  - {fileID: 114998922845888566}
   MasterBanks:
-  - {fileID: 114926976747056212}
-  - {fileID: 114190054840390704}
+  - {fileID: 114882826418509972}
   StringsBanks:
-  - {fileID: 114756073436157048}
+  - {fileID: 114449840389551684}
   stringsBankWriteTime: 636841335247266318
   cacheVersion: 3
---- !u!114 &114005218341460098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Music
-  guid: 2105e175e1913849a8fb85a78104c2bb
-  Banks:
-  - {fileID: 114599374334509162}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114215022364827486}
-  - {fileID: 114335503926571186}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 44391
---- !u!114 &114049774013645382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brian\Desktop\KesslerRhythm2D\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841187383499211
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 27776
-  - Name: HTML5
-    Value: 27776
-  Exists: 1
---- !u!114 &114072407904040218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114080466493929588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114086289918540606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Menu/Menu
-  guid: 5c21a2f5d53cdf47bfcd448f6baadadf
-  Banks:
-  - {fileID: 114676394152118592}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 29538
---- !u!114 &114093080224728840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114106706905051040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Thruster
-  guid: 3a2e8ccd2da1384d8d01f5c56f70851e
-  Banks:
-  - {fileID: 114049774013645382}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114377026334795864}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2200
---- !u!114 &114163063419261080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841335247147272
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  - Name: HTML5
-    Value: 12474
-  Exists: 1
---- !u!114 &114190054840390704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brian\Desktop\KesslerRhythm2D\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841187382663327
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  - Name: HTML5
-    Value: 12474
-  Exists: 0
---- !u!114 &114215022364827486
+--- !u!114 &114228158846603760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,23 +45,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
---- !u!114 &114233008687081820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: BossKilled
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114265013235350558
+--- !u!114 &114277806541028938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,293 +66,7 @@ MonoBehaviour:
   - Name: HTML5
     Value: 256640
   Exists: 1
---- !u!114 &114280131223888932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Wave
-  Min: 0
-  Max: 10
-  Default: 0
---- !u!114 &114340702063544372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: BossKilled
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114344871695073938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114362118236558262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brian\Desktop\KesslerRhythm2D\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841228201771325
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 3430112
-  - Name: HTML5
-    Value: 3430112
-  Exists: 0
---- !u!114 &114367687020090126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841230469594640
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 27776
-  - Name: HTML5
-    Value: 27776
-  Exists: 1
---- !u!114 &114377026334795864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114382298046542558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841230470844545
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 3430112
-  - Name: HTML5
-    Value: 3430112
-  Exists: 1
---- !u!114 &114432783197310034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114511237204887360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Power
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114523900743405516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Level/Music
-  guid: 2105e175e1913849a8fb85a78104c2bb
-  Banks:
-  - {fileID: 114676394152118592}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114525188967066860}
-  - {fileID: 114340702063544372}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 44391
---- !u!114 &114525188967066860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Wave
-  Min: 0
-  Max: 10
-  Default: 0
---- !u!114 &114606959603499894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Menu
-  guid: 5c21a2f5d53cdf47bfcd448f6baadadf
-  Banks:
-  - {fileID: 114599374334509162}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 29538
---- !u!114 &114623121569064412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brian\Desktop\KesslerRhythm2D\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841187383499211
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 27776
-  - Name: HTML5
-    Value: 27776
-  Exists: 0
---- !u!114 &114659935364557756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brian\Desktop\KesslerRhythm2D\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841187382663327
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  - Name: HTML5
-    Value: 12474
-  Exists: 1
---- !u!114 &114676394152118592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841335379596190
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 5125024
-  - Name: HTML5
-    Value: 5125024
-  Exists: 1
---- !u!114 &114756073436157048
+--- !u!114 &114449840389551684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -573,7 +87,7 @@ MonoBehaviour:
   - Name: HTML5
     Value: 1022
   Exists: 1
---- !u!114 &114760303278182616
+--- !u!114 &114455477352789318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -585,18 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Music/Temp/TempTrack
-  guid: d542361335d1ab49989ff480a160e5ec
+  Path: event:/Music/Menu/Menu
+  guid: 5c21a2f5d53cdf47bfcd448f6baadadf
   Banks:
-  - {fileID: 114676394152118592}
+  - {fileID: 114979236074351486}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 234031
---- !u!114 &114789527572988048
+  Length: 29538
+--- !u!114 &114497897354127810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,7 +126,137 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114809413770903824
+--- !u!114 &114703234433727228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Power
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114788678790526360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Thruster
+  guid: 3a2e8ccd2da1384d8d01f5c56f70851e
+  Banks:
+  - {fileID: 114277806541028938}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114703234433727228}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2200
+--- !u!114 &114844975451760334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Temp/TempTrack
+  guid: d542361335d1ab49989ff480a160e5ec
+  Banks:
+  - {fileID: 114979236074351486}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 234031
+--- !u!114 &114849045558804882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Level/Music
+  guid: 2105e175e1913849a8fb85a78104c2bb
+  Banks:
+  - {fileID: 114979236074351486}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114228158846603760}
+  - {fileID: 114497897354127810}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 44391
+--- !u!114 &114882826418509972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
+  lastModified: 636841335247147272
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  - Name: HTML5
+    Value: 12474
+  Exists: 1
+--- !u!114 &114979236074351486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
+  lastModified: 636841335379596190
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 5125024
+  - Name: HTML5
+    Value: 5125024
+  Exists: 1
+--- !u!114 &114998922845888566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,7 +271,7 @@ MonoBehaviour:
   Path: event:/SFX/Melody
   guid: 3bfefca68c25dd4fa1bba1067d40acae
   Banks:
-  - {fileID: 114265013235350558}
+  - {fileID: 114277806541028938}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -635,63 +279,3 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1846
---- !u!114 &114912076813273490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/TempTrack
-  guid: d542361335d1ab49989ff480a160e5ec
-  Banks:
-  - {fileID: 114599374334509162}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 234031
---- !u!114 &114924849463010636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Wave
-  Min: 0
-  Max: 10
-  Default: 0
---- !u!114 &114926976747056212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841230468850632
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  - Name: HTML5
-    Value: 12474
-  Exists: 0
