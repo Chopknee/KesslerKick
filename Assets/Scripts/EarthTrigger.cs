@@ -23,6 +23,7 @@ public class EarthTrigger : MonoBehaviour
                 Vector3 point = collision.transform.position - transform.position;
                 point.Normalize();
                 fb.transform.rotation = Quaternion.LookRotation(point);
+                hits++;
                 if (hits >= maxHits) {
                     //Game over!
                     Invoke("SwitchScene", 20);
