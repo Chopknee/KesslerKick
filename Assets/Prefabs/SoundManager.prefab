@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerThruster: event:/SFX/Thruster
-  EnemyHitEvents: []
-  PlanetHitEvents: []
-  EnemyExplodeEvents: []
-  LevelMusicEvent: event:/Music/Music
-  MenuMusicEvent: event:/Music/Menu
+  EnemyHitEvent: event:/SFX/Melody
+  PlanetHitEvent: event:/SFX/Melody
+  LevelMusicEvent: event:/Music/Level/Music
+  MenuMusicEvent: event:/Music/Menu/Menu

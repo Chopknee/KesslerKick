@@ -88,8 +88,7 @@ public class SoundManager : MonoBehaviour
 
     // SFX
     public string PlayerThruster;
-    public string[] EnemyHitEvents, PlanetHitEvents, EnemyExplodeEvents;
-    private int currentEnemyHitEvent, currentPlanetHitEvent, currentEnemyExplodeEvent = 0;
+    public string EnemyHitEvent, PlanetHitEvent;
 
     public void StartThruster(GameObject target)
     {
@@ -118,51 +117,24 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEnemyHit(GameObject target)
     {
-        currentEnemyHitEvent++;
-
-        if (currentEnemyHitEvent >= EnemyHitEvents.Length)
-            currentEnemyHitEvent = 0;
-
         var eventEmitter = GetEmitter(target);
 
         if (eventEmitter.IsPlaying())
             eventEmitter.Stop();
 
-        eventEmitter.Event = EnemyHitEvents[currentEnemyHitEvent];
+        eventEmitter.Event = EnemyHitEvent;
 
         eventEmitter.Play();
     }
 
     public void PlayPlanetHit(GameObject target)
     {
-        currentPlanetHitEvent++;
-
         var eventEmitter = GetEmitter(target);
-
-        if (currentPlanetHitEvent >= PlanetHitEvents.Length)
-            currentPlanetHitEvent = 0;
 
         if (eventEmitter.IsPlaying())
             eventEmitter.Stop();
 
-        eventEmitter.Event = PlanetHitEvents[currentPlanetHitEvent];
-
-        eventEmitter.Play();
-    }
-
-    public void PlayEnemyExplode(GameObject target)
-    {
-        currentEnemyExplodeEvent++;
-
-        var eventEmitter = GetEmitter(target);
-
-        if (currentEnemyExplodeEvent >= EnemyExplodeEvents.Length)
-            currentEnemyExplodeEvent = 0;
-
-        if (eventEmitter.IsPlaying())
-            eventEmitter.Stop();
-
-        eventEmitter.Event = EnemyExplodeEvents[currentEnemyExplodeEvent];
+        eventEmitter.Event = PlanetHitEvent;
 
         eventEmitter.Play();
     }

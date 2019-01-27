@@ -18,16 +18,17 @@ MonoBehaviour:
   - {fileID: 114676394152118592}
   - {fileID: 114265013235350558}
   EditorEvents:
-  - {fileID: 114912076813273490}
   - {fileID: 114106706905051040}
-  - {fileID: 114005218341460098}
-  - {fileID: 114606959603499894}
+  - {fileID: 114523900743405516}
+  - {fileID: 114086289918540606}
+  - {fileID: 114760303278182616}
+  - {fileID: 114809413770903824}
   MasterBanks:
   - {fileID: 114926976747056212}
   - {fileID: 114190054840390704}
   StringsBanks:
   - {fileID: 114756073436157048}
-  stringsBankWriteTime: 636841301530044092
+  stringsBankWriteTime: 636841335247266318
   cacheVersion: 3
 --- !u!114 &114005218341460098
 MonoBehaviour:
@@ -70,6 +71,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114086289918540606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu/Menu
+  guid: 5c21a2f5d53cdf47bfcd448f6baadadf
+  Banks:
+  - {fileID: 114676394152118592}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 29538
 --- !u!114 &114093080224728840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +130,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114511237204887360}
+  - {fileID: 114377026334795864}
   MinDistance: 1
   MaxDistance: 20
   Length: 2200
@@ -123,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Master Bank.bank
-  lastModified: 636841301529989545
+  lastModified: 636841335247147272
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -181,13 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Sfx.bank
-  lastModified: 636841301531224507
+  lastModified: 636841335383817047
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 27776
+    Value: 256640
   - Name: HTML5
-    Value: 27776
+    Value: 256640
   Exists: 1
 --- !u!114 &114280131223888932
 MonoBehaviour:
@@ -204,6 +228,22 @@ MonoBehaviour:
   Name: Wave
   Min: 0
   Max: 10
+  Default: 0
+--- !u!114 &114340702063544372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BossKilled
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114344871695073938
 MonoBehaviour:
@@ -263,6 +303,22 @@ MonoBehaviour:
   - Name: HTML5
     Value: 27776
   Exists: 1
+--- !u!114 &114377026334795864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Power
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114382298046542558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +371,47 @@ MonoBehaviour:
   Name: Power
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114523900743405516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Level/Music
+  guid: 2105e175e1913849a8fb85a78104c2bb
+  Banks:
+  - {fileID: 114676394152118592}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114525188967066860}
+  - {fileID: 114340702063544372}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 44391
+--- !u!114 &114525188967066860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wave
+  Min: 0
+  Max: 10
   Default: 0
 --- !u!114 &114606959603499894
 MonoBehaviour:
@@ -373,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\development\code\unity\KesslerKick\Assets\AudioBanks\Desktop\Music.bank
-  lastModified: 636841301530832673
+  lastModified: 636841335379596190
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -394,14 +491,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\AudioBanks\Desktop\Master Bank.strings.bank
-  lastModified: 636841301530044092
+  lastModified: 636841335247266318
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 968
+    Value: 1022
   - Name: HTML5
-    Value: 968
+    Value: 1022
   Exists: 1
+--- !u!114 &114760303278182616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Temp/TempTrack
+  guid: d542361335d1ab49989ff480a160e5ec
+  Banks:
+  - {fileID: 114676394152118592}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 234031
 --- !u!114 &114789527572988048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +538,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114809413770903824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Melody
+  guid: 3bfefca68c25dd4fa1bba1067d40acae
+  Banks:
+  - {fileID: 114265013235350558}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1846
 --- !u!114 &114912076813273490
 MonoBehaviour:
   m_ObjectHideFlags: 0

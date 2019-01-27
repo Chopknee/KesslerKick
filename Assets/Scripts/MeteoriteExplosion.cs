@@ -11,6 +11,7 @@ public class MeteoriteExplosion : MonoBehaviour
             Debug.Log("Particle system component not present!");
             Invoke("Kill", GetComponent<ParticleSystem>().startLifetime);
             GetComponent<ParticleSystem>().Play();
+            SoundManager.Instance.PlayPlanetHit(gameObject);
         }
     }
 
