@@ -167,7 +167,7 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
-    public void PlayGameOvery(GameObject target)
+    public void PlayGameOver(GameObject target)
     {
         var eventEmitter = GetEmitter(target);
 
