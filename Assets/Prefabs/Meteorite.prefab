@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4531048044492846369
+--- !u!1 &25
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4531048044492846381}
-  - component: {fileID: 4531048044492846380}
-  - component: {fileID: 4531048044492846379}
-  - component: {fileID: 4531048044492846378}
-  - component: {fileID: 4531048044492846368}
-  - component: {fileID: 140512185}
+  - component: {fileID: 27}
+  - component: {fileID: 30}
+  - component: {fileID: 34}
+  - component: {fileID: 28}
+  - component: {fileID: 29}
+  - component: {fileID: 33}
   m_Layer: 8
   m_Name: Meteorite
   m_TagString: Meteorite
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4531048044492846381
+--- !u!4 &27
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.26, y: 4.47, z: -0.005859375}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
@@ -35,14 +35,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!96 &4531048044492846380
+--- !u!96 &30
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -139,13 +139,13 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &4531048044492846379
+--- !u!114 &34
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea9c8fe6968400643a340a17b5531e8a, type: 3}
@@ -197,14 +197,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   floatMode: 0
---- !u!50 &4531048044492846378
+--- !u!50 &28
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -218,13 +218,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4531048044492846368
+--- !u!61 &29
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -244,13 +244,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!212 &140512185
+--- !u!212 &33
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4531048044492846369}
+  m_GameObject: {fileID: 25}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
