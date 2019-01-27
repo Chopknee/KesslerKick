@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 1492069599}
-  CrewButton: {fileID: 0}
+  CrewButton: {fileID: 1897747223}
   QuitButton: {fileID: 1977215608}
 --- !u!1 &1341744836
 GameObject:
