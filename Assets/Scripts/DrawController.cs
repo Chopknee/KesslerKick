@@ -13,6 +13,7 @@ public class DrawController : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.StartAmbientMusic();
         startingColor = text[0].color;
         button.onClick.AddListener(OnClick);
     }
@@ -33,6 +34,8 @@ public class DrawController : MonoBehaviour
 
     void OnClick()
     {
+        SoundManager.Instance.StopAmbientMusic();
+        SoundManager.Instance.PlayUiStart(gameObject);
         SceneManager.LoadScene("2DNavigation");
     }
 }

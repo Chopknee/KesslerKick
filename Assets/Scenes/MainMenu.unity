@@ -228,7 +228,6 @@ MonoBehaviour:
     type: 3}
   spawnRadius: 8
   targetObject: {fileID: 576683839}
-  spawnTime: 0.5
   baseBPM: 120
   maxBMPMultiplier: 2
   initialPunch: 8
@@ -762,8 +761,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 1492069599}
   QuitButton: {fileID: 1977215608}
-  BeginButton: {fileID: 0}
-  wdhmtoInput: {fileID: 0}
 --- !u!1 &1341744836
 GameObject:
   m_ObjectHideFlags: 0

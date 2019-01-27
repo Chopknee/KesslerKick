@@ -13,15 +13,20 @@ public class GameOverGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.StartAmbientMusic();
         MenuButton.onClick.AddListener(GoToMenu);
         QuitButton.onClick.AddListener(Quit);
     }
 
     public void GoToMenu() {
+        SoundManager.Instance.StopAmbientMusic();
+        SoundManager.Instance.PlayUiButton(gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit() {
+        SoundManager.Instance.StopAmbientMusic();
+        SoundManager.Instance.PlayUiQuit(gameObject);
         Application.Quit();
     }
 }

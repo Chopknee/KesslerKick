@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class InfiniteModeUI : MonoBehaviour
 {
-
-    public Text missesText;
-    public Text hitsText;
     public ShipControls playerShip;
     public EarthTrigger planetEarth;
 
@@ -18,7 +15,7 @@ public class InfiniteModeUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (missesText == null || hitsText == null || playerShip == null || planetEarth == null) {
+        if (playerShip == null || planetEarth == null) {
             Debug.Log("Missing some elements from the UI component, please check it!");
         }
 
@@ -30,9 +27,9 @@ public class InfiniteModeUI : MonoBehaviour
         hits++;
         //hitsText.text = string.Format("Hits: {0, 0:D3} ", hits);
 
-        if (hits % 12 == 0)
+        if (hits % 10 == 0)
         {
-            wave = Mathf.Min(10, wave++);
+            wave = Mathf.Min(10, ++wave);
             SoundManager.Instance.SetMusicParam("Wave", wave);
         }
     }

@@ -81,8 +81,14 @@ public class Meteorite : MonoBehaviour
     }
 
     public void Kill() {
-        SoundManager.Instance.RemoveBeatCallback(OnBeat);
         Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        var sm = SoundManager.Instance;
+        if (sm != null)
+            sm.RemoveBeatCallback(OnBeat);
     }
 
     private void Pulse()
@@ -98,7 +104,7 @@ public class Meteorite : MonoBehaviour
 
     private void OnBeat(int bar, int beat)
     {
-        if (beat == pulseBeat || ((bar + 3) % 4 == 0 && beat == 1) || pulseBeat == 5)
+       if (beat == pulseBeat || ((bar + 3) % 4 == 0 && beat == 1) || pulseBeat == 5)
             pulse = 0;
     }
 }

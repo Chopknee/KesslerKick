@@ -45,6 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerThruster: event:/SFX/Thruster
   EnemyHitEvent: event:/SFX/Melody
-  PlanetHitEvent: event:/SFX/Melody
+  PlanetHitEvent: event:/SFX/MetorHit
+  BossMelody: event:/SFX/BossMelody
+  BossDeath: event:/SFX/BossDeath
+  GameOver: event:/SFX/GameOver
+  UiButton: event:/SFX/Ui/Button
+  UiStart: event:/SFX/Ui/StartGame
+  UiQuit: event:/SFX/Ui/Quit
   LevelMusicEvent: event:/Music/Level/Music
   MenuMusicEvent: event:/Music/Menu/Menu
+  AmbientMusicEvent: event:/Music/Ambient

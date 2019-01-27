@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
      * Actual SoundManager
      */
 
-    private void Awake()
+    private void Start()
     {
         var listener = FindObjectOfType<FMODUnity.StudioListener>();
 
@@ -79,16 +79,20 @@ public class SoundManager : MonoBehaviour
                 Debug.LogError("No camera found to attach sound listener");
             }
         }
+
+        beatCallback = new FMOD.Studio.EVENT_CALLBACK(SoundManager.BeatEventCallback);
+        beatCallbacks = new List<BeatCallback>();
     }
 
-    private void Start()
+    private void OnLevelWasLoaded(int level)
     {
-        beatCallback = new FMOD.Studio.EVENT_CALLBACK(SoundManager.BeatEventCallback);
+        Start();        
     }
 
     // SFX
     public string PlayerThruster;
-    public string EnemyHitEvent, PlanetHitEvent;
+    public string EnemyHitEvent, PlanetHitEvent, BossMelody, BossDeath, GameOver;
+    public string UiButton, UiStart, UiQuit;
 
     public void StartThruster(GameObject target)
     {
@@ -139,6 +143,78 @@ public class SoundManager : MonoBehaviour
         eventEmitter.Play();
     }
 
+    public void PlayBossMelody(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = BossMelody;
+
+        eventEmitter.Play();
+    }
+
+    public void PlayBossDeathy(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = BossDeath;
+
+        eventEmitter.Play();
+    }
+
+    public void PlayGameOvery(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = GameOver;
+
+        eventEmitter.Play();
+    }
+
+    public void PlayUiButton(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = UiButton;
+
+        eventEmitter.Play();
+    }
+
+    public void PlayUiStart(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = UiStart;
+
+        eventEmitter.Play();
+    }
+
+    public void PlayUiQuit(GameObject target)
+    {
+        var eventEmitter = GetEmitter(target);
+
+        if (eventEmitter.IsPlaying())
+            eventEmitter.Stop();
+
+        eventEmitter.Event = UiQuit;
+
+        eventEmitter.Play();
+    }
+
     private FMODUnity.StudioEventEmitter GetEmitter(GameObject obj)
     {
         var eventEmitter = obj.GetComponent<FMODUnity.StudioEventEmitter>();
@@ -155,6 +231,7 @@ public class SoundManager : MonoBehaviour
     FMOD.Studio.EventInstance musicInstance;
     public string LevelMusicEvent;
     public string MenuMusicEvent;
+    public string AmbientMusicEvent;
 
     public void StartLevelMusic()
     {
@@ -182,6 +259,23 @@ public class SoundManager : MonoBehaviour
     public void StopMenuMusic()
     {
         if (!CheckCurrentMusicEvent(MenuMusicEvent))
+            return;
+
+        musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
+
+        if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StartAmbientMusic()
+    {
+        SetMusicInstance(AmbientMusicEvent);
+        musicInstance.start();
+    }
+
+    public void StopAmbientMusic()
+    {
+        if (!CheckCurrentMusicEvent(AmbientMusicEvent))
             return;
 
         musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
@@ -247,14 +341,15 @@ public class SoundManager : MonoBehaviour
 
     public void RemoveBeatCallback(BeatCallback cb)
     {
-        beatCallbacks.Remove(cb);
+        if (beatCallbacks.Contains(cb))
+            beatCallbacks.Remove(cb);
     }
 
     private void TriggerBeatCallbacks(int bar, int beat)
     {
-        beatCallbacks.ForEach(cb => cb(bar, beat));
+        beatCallbacks.ForEach(cb => cb?.Invoke(bar, beat));
     }
-
+    
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
     static FMOD.RESULT BeatEventCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, FMOD.Studio.EventInstance instance, IntPtr parameterPtr)
     {
