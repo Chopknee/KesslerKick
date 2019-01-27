@@ -26,12 +26,22 @@ public class FinalBoss : MonoBehaviour
 
     private float targetRotation;
     private float startRotation;
+
+    public float hits = 0;
+    public float hitLimit = 4;
+    public float ominousTime = 10;//Time boss takes to slide in scene
+    public float slideInAltitude = 11;//How far off screen is the boss when it spawns?
+    float startAltitude = 0;
+    //Maybe useful?
+    public delegate void Killed();
+    public event Killed OnKilled;
     // Start is called before the first frame update
     void Start()
     {
         if (orbitalBody == null) {
             orbitalBody = GameObject.FindGameObjectWithTag("Earth");
         }
+        startAltitude = altitude;
     }
 
     // Update is called once per frame
@@ -57,7 +67,6 @@ public class FinalBoss : MonoBehaviour
                 break;
             case 20:
                 state = 21;
-                Debug.Log("Finished accelerating orbit.");
                 randomStopTime = Random.Range(5f, 15f);
                 break;
             case 21:
@@ -66,7 +75,6 @@ public class FinalBoss : MonoBehaviour
                 MovingOnOrbit();
                 //Looking for next chance to stop and torment the player
                 if (duration > randomStopTime) {
-                    Debug.Log("Time to slow down.");
                     duration = 0;
                     state = 30;
                 }
@@ -85,7 +93,6 @@ public class FinalBoss : MonoBehaviour
                 }
                 break;
             case 40:
-                Debug.Log("I have finished slowing down.");
                 state = 41;
                 startRotation = transform.rotation.eulerAngles.z;
                 targetRotation = (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90;
@@ -96,7 +103,6 @@ public class FinalBoss : MonoBehaviour
                 RotateTowardPlanet(duration);
                 if (duration > turningTime) {
                     state = 50;
-                    Debug.Log("I have finished turning.");
                     duration = 0;
                     state = 51;
                 }
@@ -111,7 +117,6 @@ public class FinalBoss : MonoBehaviour
                 break;
             case 51:
                 //Shoot
-                Debug.Log("Firing missiles or whatever.");
                 GameObject go = Instantiate(projectile);
                 go.transform.position = (Vector2)transform.position + ((Vector2)transform.up*1.5f);
                 state = 60;
@@ -126,9 +131,36 @@ public class FinalBoss : MonoBehaviour
                 RotateTowardPlanet(duration);
                 if (duration > turningTime) {
                     state = 50;
-                    Debug.Log("I have finished turning.");
                     duration = 0;
                     state = 0;
+                }
+                break;
+            case 70:
+                //Spawn in 'animation'
+                state = 71;
+                duration = 0;
+                break;
+            case 71:
+                MovingOnOrbit();
+                altitude = Mathf.Lerp(slideInAltitude, startAltitude, duration / ominousTime);
+                //Waiting for slide in animation to finish
+                if (duration > ominousTime) {
+                    //Finished being ominous
+                    state = 60;
+                    //Begin the cycle of tormentation!
+                    direction = (Random.Range(0, 2) == 1) ? 1 : -1;
+                    targetRotation = Mathf.Rad2Deg * percentAround * 2 * Mathf.PI - ((direction < 0) ? 180 : 0);
+                }
+                break;
+            case 80:
+                //Explode and do fun things, yay!
+                //Do some explosions, then run on killed
+                duration += Time.deltaTime;
+                
+                if (duration > 5) {
+                    OnKilled?.Invoke();
+                    state = 100;//Non checked state!!
+                    Destroy(gameObject);
                 }
                 break;
         }
@@ -136,7 +168,8 @@ public class FinalBoss : MonoBehaviour
 
     //Call this to do the ominous spawn in animation thing.
     public void SpawnIn() {
-
+        state = 70;//Set to spawn in state
+        transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * percentAround * 2 * Mathf.PI) + 90);//Turn toward the planet
     }
 
     public void RotateTowardPlanet(float t) {
@@ -163,10 +196,10 @@ public class FinalBoss : MonoBehaviour
 
     //The boss got hit!
     public void TakeDamage() {
-
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Ouch");
+        hits++;
+        if (hits >= hitLimit) {
+            state = 80;
+            duration = 0;
+        }
     }
 }
